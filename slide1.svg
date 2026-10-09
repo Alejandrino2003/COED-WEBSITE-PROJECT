@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b1420"/><stop offset="1" stop-color="#a83244"/></linearGradient></defs><rect width="800" height="560" fill="url(#g)"/><circle cx="90" cy="90" r="120" fill="#fff" opacity=".07"/><circle cx="720" cy="490" r="150" fill="#fff" opacity=".07"/>
+<rect x="120" y="90" width="560" height="270" rx="14" fill="#2f4a3c" stroke="#d9b98a" stroke-width="12"/>
+<text x="160" y="170" font-family="Georgia,serif" font-size="44" fill="#f4f1e6">Good morning, class!</text>
+<text x="160" y="235" font-family="monospace" font-size="34" fill="#f2b632">2 + 3 = 5   ✎</text>
+<path d="M160 290h200" stroke="#f4f1e6" stroke-width="4" stroke-dasharray="10 8"/>
+<rect x="150" y="360" width="500" height="14" fill="#d9b98a"/>
+<g fill="#f2b632"><rect x="160" y="430" width="120" height="16" rx="4"/><rect x="340" y="430" width="120" height="16" rx="4"/><rect x="520" y="430" width="120" height="16" rx="4"/></g>
+<g fill="#fff"><circle cx="220" cy="405" r="18"/><circle cx="400" cy="405" r="18"/><circle cx="580" cy="405" r="18"/></g>
+</svg>

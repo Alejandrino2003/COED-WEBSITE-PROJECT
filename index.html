@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BSEd Department</title>
+  <meta name="description" content="Official website of the Bachelor of Secondary Education (BSEd) department.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
+  <!-- Layout & theme -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Animations & transitions (kept separate on purpose) -->
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<a class="skip-link" href="#top">Skip to content</a>
+
+<!-- ======================= MENU  (FLEXBOX) ======================= -->
+<header class="site-header" id="site-header">
+  <nav class="nav" aria-label="Main navigation">
+
+    <a href="#top" class="brand">
+      <img src="images/logo.svg" alt="" class="brand-logo" width="44" height="44">
+      <span class="brand-text">
+        <b data-config="deptName">Department of Teacher Education</b>
+        <small data-config="schoolName">Your School Name</small>
+      </span>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#top" data-spy="top">Home</a></li>
+      <li><a href="#about" data-spy="about">About</a></li>
+      <li><a href="#programs" data-spy="programs">Programs</a></li>
+      <li><a href="#contact" data-spy="contact">Contact</a></li>
+      <li><a href="#contact" class="cta">Enroll Now</a></li>
+    </ul>
+
+    <div class="nav-tools">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">☾</button>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ======================= COVER  (GRID) ======================= -->
+  <section class="cover">
+    <div class="cover-grid">
+
+      <div class="cover-title" data-reveal>
+        <span class="eyebrow">Bachelor of Secondary Education</span>
+        <h1>Teach. Inspire. <span class="accent">Transform Lives.</span></h1>
+        <p data-config="tagline">Shaping competent, compassionate and globally competitive secondary school teachers.</p>
+        <div class="btn-row">
+          <a href="#programs" class="btn gold">Explore Majors</a>
+          <a href="#contact" class="btn ghost">Ask a Question</a>
+        </div>
+      </div>
+
+      <!-- Slideshow: images come from SITE_CONFIG.slides in js/script.js -->
+      <div class="slider cover-art" id="slider" data-reveal aria-roledescription="carousel" aria-label="Department highlights">
+        <div class="slides"></div>
+        <p class="slide-caption" aria-live="polite"></p>
+        <button class="slider-btn prev" type="button" aria-label="Previous slide">‹</button>
+        <button class="slider-btn next" type="button" aria-label="Next slide">›</button>
+        <div class="dots"></div>
+      </div>
+
+      <div class="cover-stats" data-reveal>
+        <div class="stat"><b data-count="850" data-suffix="+">0</b><small>BSEd Students</small></div>
+        <div class="stat"><b data-count="42">0</b><small>Faculty Members</small></div>
+        <div class="stat"><b data-count="92" data-suffix="%">0</b><small>LET Passing Rate</small></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================= SECTION 1  (FLOAT: image left, text right) ======================= -->
+  <section class="section" id="about">
+    <div class="wrap float-layout">
+
+      <figure class="art" data-reveal="left">
+        <img src="images/about.svg" alt="School building illustration" width="800" height="560" loading="lazy">
+      </figure>
+
+      <div class="text" data-reveal="right">
+        <span class="tag">About the Department</span>
+        <h2>Who We Are</h2>
+        <h3>Forming teachers of character and competence</h3>
+        <p>The BSEd program prepares future high school teachers through strong subject mastery, modern teaching methods and supervised classroom practice in partner schools.</p>
+
+        <!-- Accordion (JS toggles) -->
+        <div class="accordion" id="accordion">
+          <div class="acc-item">
+            <button class="acc-head" type="button" aria-expanded="true">Mission <span class="acc-icon" aria-hidden="true">+</span></button>
+            <div class="acc-panel"><div><p>To provide quality, values-driven teacher education that produces reflective, skilled and service-oriented educators.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button" aria-expanded="false">Vision <span class="acc-icon" aria-hidden="true">+</span></button>
+            <div class="acc-panel"><div><p>A center of excellence in secondary teacher education recognized for innovation, research and community engagement.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" type="button" aria-expanded="false">Core Values <span class="acc-icon" aria-hidden="true">+</span></button>
+            <div class="acc-panel"><div><p>Excellence, integrity, compassion, service and love of country.</p></div></div>
+          </div>
+        </div>
+
+        <a href="#programs" class="btn">Learn more</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================= SECTION 2  (FLEX: text left, image right) ======================= -->
+  <section class="section" id="programs">
+    <div class="wrap flex-layout">
+
+      <div class="text" data-reveal="left">
+        <span class="tag">Academics</span>
+        <h2>Majors &amp; Specializations</h2>
+        <h3>Choose the subject you will teach</h3>
+        <p>Select a major to see what you will study. Every track includes field study, practice teaching and a research capstone.</p>
+
+        <!-- Tabs are generated from SITE_CONFIG.majors -->
+        <div class="tabs" id="tabs" role="tablist" aria-label="BSEd majors"></div>
+
+        <div class="tab-panel" id="tab-panel" role="tabpanel" aria-live="polite">
+          <h4 id="major-name"></h4>
+          <p id="major-summary"></p>
+          <ul class="checklist" id="major-subjects"></ul>
+        </div>
+
+        <a href="#contact" class="btn" id="major-cta">Learn more</a>
+      </div>
+
+      <figure class="art" data-reveal="right">
+        <img src="images/major-english.svg" alt="" id="major-image" width="800" height="560" loading="lazy">
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ======================= SECTION 3  (GRID: image left, text right) ======================= -->
+  <section class="section" id="contact">
+    <div class="wrap grid-layout">
+
+      <figure class="art" data-reveal="left">
+        <img src="images/contact.svg" alt="Envelope and chat bubble illustration" width="800" height="560" loading="lazy">
+      </figure>
+
+      <div class="text" data-reveal="right">
+        <span class="tag">Admissions &amp; Contact</span>
+        <h2>Start Your Teaching Journey</h2>
+        <h3>Send us an inquiry and we will get back to you</h3>
+        <p>Fill out the form below. Our department secretary will reply within two working days.</p>
+
+        <form id="inquiry-form" novalidate>
+          <div class="field">
+            <label for="f-name">Full name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Juan Dela Cruz">
+            <span class="error" data-error-for="f-name"></span>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com">
+            <span class="error" data-error-for="f-email"></span>
+          </div>
+          <div class="field">
+            <label for="f-major">Major of interest</label>
+            <select id="f-major" name="major"></select>
+            <span class="error" data-error-for="f-major"></span>
+          </div>
+          <div class="field">
+            <label for="f-message">Message <small id="msg-count">0 / 300</small></label>
+            <textarea id="f-message" name="message" rows="4" maxlength="300" placeholder="Tell us how we can help..."></textarea>
+            <span class="error" data-error-for="f-message"></span>
+          </div>
+          <button class="btn" type="submit">Send Inquiry</button>
+          <p class="form-success" id="form-success" role="status" hidden></p>
+        </form>
+
+        <ul class="contact-list">
+          <li><b>Office:</b> <span data-config="address"></span></li>
+          <li><b>Email:</b> <span data-config="email"></span></li>
+          <li><b>Phone:</b> <span data-config="phone"></span></li>
+          <li><b>Hours:</b> <span data-config="hours"></span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year">2026</span> <b data-config="deptName">Department of Teacher Education</b>. All rights reserved.</p>
+  <p>Built with plain HTML, CSS &amp; JavaScript. No frameworks.</p>
+</footer>
+
+<button class="to-top" id="to-top" type="button" aria-label="Back to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
